@@ -19,8 +19,42 @@
             </div>
         </section>
         <section class="menu">
-            
+            <button class="menu-opcao botao">1 Jogador</button>
+            <button class="menu-opcao botao">2 Jogadores</button>
+            <div class="menu-opcao">
+                <h2>Jogadores</h2>
+                <div class="menu-opcao-jogadores">
+                    <div>
+                        <label for="j1">Jogador 1</label>
+                        <input type="text" name="jogador1" id="j1">
+                    </div>
+                    <div>
+                        <label for="j2">Jogador 2</label>
+                        <input type="text" name="jogador1" id="j2">
+                    </div>
+                </div>
+                <h2>Melhor de</h2>
+                <div class="menu-opcao-melhor-de">
+                    <div>
+                        <label for="md3">1</label>
+                        <input type="radio" name="melhorde" id="md1" value="1" checked>
+                    </div>
+                    <div>
+                        <label for="md5">3</label>
+                        <input type="radio" name="melhorde" id="md3" value="3">
+                    </div>
+                    <div>
+                        <label for="md10">5</label>
+                        <input type="radio" name="melhorde" id="md5" value="5">
+                    </div>
+                </div>
+                <a href="#" class="botao botao-jogar" onclick="verificador()">Jogar</a>
+            </div>
+            <a class="menu-opcao botao" href="#">Como jogar</a>
+            <a class="menu-opcao botao" href="#">Sobre o projeto</a>
         </section>
     </main>
+
+    <script src="./scripts/main.js"></script>
 </body>
 </html>
