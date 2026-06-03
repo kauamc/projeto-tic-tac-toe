@@ -8,3 +8,28 @@ function verificador() {
     const melhorDe = document.querySelector('input[name="melhorde"]:checked').value
     console.log(melhorDe + " foi selecionado")
 }
+
+function selecaoModo(id) {
+    let umJogador = document.getElementById('um-jogador')
+    let divUmJogador = document.getElementById('opcoes-um-jogador')
+    let doisJogadores = document.getElementById('dois-jogadores')
+    let divDoisJogadores = document.getElementById('opcoes-dois-jogadores')
+    let botaoJogar = document.getElementById('botao-jogar')
+
+    if (id == 'um-jogador') {
+        umJogador.classList.add('modo-selecionado')
+        doisJogadores.classList.remove('modo-selecionado')
+
+        divUmJogador.classList.remove('oculto')
+        divDoisJogadores.classList.add('oculto')
+        botaoJogar.classList.add('oculto')
+    } else {
+        umJogador.classList.remove('modo-selecionado')
+        doisJogadores.classList.add('modo-selecionado')
+
+        divUmJogador.classList.add('oculto')
+        divDoisJogadores.classList.remove('oculto')
+        botaoJogar.classList.remove('oculto')
+        
+    }
+}
