@@ -1,0 +1,41 @@
+main {
+    padding: initial;
+    gap: initial;
+}
+
+.partida-dados-jogadores {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    background-color: aquamarine;
+    padding: 1em;
+    gap: 1em;
+}
+
+.partida-dados-pts {
+    display: grid;
+    grid-template: auto / auto 1fr auto;
+}
+
+.partida-dados-pts-jogador {
+    text-align: center;
+}
+
+.partida-vez {
+    text-align: center;
+}
+
+/* Partida */
+
+.partida {
+    width: 100%;
+    display: grid;
+    gap: 1em;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
+
+.partida-area {
+    background-color: lightgrey;
+    width: 100px;
+    height: 100px;
+}
