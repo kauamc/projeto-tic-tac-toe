@@ -3,10 +3,13 @@ function verificador() {
     const j1 = document.querySelector('input#j1').value
     const j2 = document.querySelector('input#j2').value
     console.log(`Os jogadores são: ${j1} e ${j2}`)
+    sessionStorage.setItem("jogador1", j1)
+    sessionStorage.setItem("jogador2", j2)
     
     // Melhor de
     const melhorDe = document.querySelector('input[name="melhorde"]:checked').value
     console.log(melhorDe + " foi selecionado")
+    sessionStorage.setItem("melhorDe", melhorDe)
 }
 
 function selecaoModo(id) {
@@ -30,6 +33,5 @@ function selecaoModo(id) {
         divUmJogador.classList.add('oculto')
         divDoisJogadores.classList.remove('oculto')
         botaoJogar.classList.remove('oculto')
-        
     }
 }
