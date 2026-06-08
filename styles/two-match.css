@@ -29,6 +29,10 @@ main {
 
 .partida {
     width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    height: auto;
+    aspect-ratio: 1/1;
     display: grid;
     gap: 1em;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
@@ -36,6 +40,9 @@ main {
 
 .partida-area {
     background-color: lightgrey;
-    width: 100px;
-    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    cursor: pointer;
 }
