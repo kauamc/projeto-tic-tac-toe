@@ -8,6 +8,7 @@ for(let c = 1; c <= 9; c++) {
 
 const j1 = sessionStorage.getItem("jogador1")
 const j2 = sessionStorage.getItem("jogador2")
+const melhorDe = sessionStorage.getItem("melhorDe")
 if (j1) { document.getElementById('dados-j1-nome').innerHTML = j1 }
 if (j2) { document.getElementById('dados-j2-nome').innerHTML = j2 }
 
@@ -27,8 +28,12 @@ let vez = 'j1'
 let dadosVezJ1 = document.getElementById('dados-j1-vez')
 let dadosVezJ2 = document.getElementById('dados-j2-vez')
 
-let ptsJ1 = document.getElementById('dados-j1-pts')
-let ptsJ2 = document.getElementById('dados-j2-pts')
+let ptsJ1 = 0
+let ptsJ2 = 0
+let dadosPtsJ1 = document.getElementById('dados-j1-pts')
+let dadosPtsJ2 = document.getElementById('dados-j2-pts')
+
+let qtdJogadas = 0
 
 const areas = document.querySelectorAll('.partida-area')
 areas.forEach(area => {
@@ -40,13 +45,18 @@ function jogada(area) {
         if (vez == 'j1') {
             area.innerHTML = 'X'
             partida[area.id.slice(-1)-1] = 'X'
-            
         } else {
             area.innerHTML = 'O'
             partida[area.id.slice(-1)-1] = 'O'
         }
-        haVencedor()
-        atualizarVez()
+        qtdJogadas++
+        if (qtdJogadas == 9) {
+            alert('Deu velha!')
+            novaRodada()
+        } else {
+            haVencedor()
+            atualizarVez()
+        }
     } else {
         // Jogada inválida !!!
     }
@@ -65,9 +75,16 @@ function haVencedor() {
         (partida[2] == 'X' && partida[4] == 'X' && partida[6] == 'X')
     ) 
     {
-        alert(`${j1} foi o vencedor`)
-    }
-    else if (
+        ptsJ1++
+        dadosPtsJ1.innerHTML = ptsJ1
+        if (ptsJ1 == melhorDe) {
+            alert(`${j1} venceu a melhor de ${melhorDe}`)
+            // Menu principal / jogar de novo
+        } else {
+            novaRodada()
+        }
+    // Para jogador 2 (O)
+    } else if (
         (partida[0] == 'O' && partida[1] == 'O' && partida[2] == 'O') || 
         (partida[3] == 'O' && partida[4] == 'O' && partida[5] == 'O') || 
         (partida[6] == 'O' && partida[7] == 'O' && partida[8] == 'O') || 
@@ -78,16 +95,31 @@ function haVencedor() {
         (partida[2] == 'O' && partida[4] == 'O' && partida[6] == 'O')
     )
     {
-        alert(`${j2} foi o vencedor`)
+        ptsJ2++
+        dadosPtsJ2.innerHTML = ptsJ2
+        if (ptsJ2 == melhorDe) {
+            alert(`${j2} venceu a melhor de ${melhorDe}`)
+            // Menu principal / jogar de novo
+        } else {
+            novaRodada()
+        }
     }
 }
 
 function atualizarVez() {
-    dadosVezJ1.classList.toggle('oculto')
-    dadosVezJ2.classList.toggle('oculto')
+    dadosVezJ1.classList.toggle('opacity-oculto')
+    dadosVezJ2.classList.toggle('opacity-oculto')
     if (vez == 'j1') {
         vez = 'j2'
     } else {
         vez = 'j1'
     }
+}
+
+function novaRodada() {
+    partida = [null, null, null, null, null, null, null, null, null]
+    for(let c = 1; c <= 9; c++) {
+        document.getElementById(`a${c}`).innerHTML = partida[c-1]
+    }
+    qtdJogadas = 0
 }

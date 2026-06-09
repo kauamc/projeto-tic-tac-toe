@@ -25,6 +25,10 @@ main {
     text-align: center;
 }
 
+.opacity-oculto {
+    opacity: 0;
+}
+
 /* Partida */
 
 .partida {
