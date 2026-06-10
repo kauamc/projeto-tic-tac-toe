@@ -50,13 +50,8 @@ function jogada(area) {
             partida[area.id.slice(-1)-1] = 'O'
         }
         qtdJogadas++
-        if (qtdJogadas == 9) {
-            alert('Deu velha!')
-            novaRodada()
-        } else {
-            haVencedor()
-            atualizarVez()
-        }
+        atualizarVez()
+        haVencedor()
     } else {
         // Jogada inválida !!!
     }
@@ -103,6 +98,11 @@ function haVencedor() {
         } else {
             novaRodada()
         }
+    // Em caso de velha
+    } else if (qtdJogadas == 9) {
+        alert('Deu velha!')
+        atualizarVez()
+        novaRodada()
     }
 }
 
