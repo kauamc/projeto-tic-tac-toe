@@ -14,21 +14,25 @@
 body {
     width: 100%;
     height: 100dvh;
+    display: flex;
+    justify-content: center;
 }
 
 main {
     display: flex;
     flex-flow: column;
+    align-items: center;
     padding: 1em;
     gap: 1em;
+    width: 100%;
+    max-width: 600px;
 }
 
 .icone-jogo {
     display: grid;
-    width: 100%;
+    width: 350px;
+    height: 350px;
     max-width: 400px;
-    height: auto;
-    aspect-ratio: 1/1;
 }
 
 .icone-jogo-linhas {
@@ -38,15 +42,21 @@ main {
     justify-content: space-evenly;
 }
 
-.icone-jogo-linhas > div {
+.icone-linha {
     background-color: black;
     border-radius: 8px;
-    width: 100%;
+    width: 0px;
     height: 15px;
+    transition: width 1s;
 }
 
 .icone-jogo-linhas:nth-child(2) {
-    transform: rotate(90deg);
+    transform: rotate(90deg) scaleY(-1);
+}
+
+.icone-jogo-linhas-animacao {
+    width: 100%;
+    transition: width 1s;
 }
 
 /* Menu */
@@ -55,13 +65,13 @@ main {
     display: grid;
     grid-template: auto auto auto / 1fr 1fr;
     gap: 1em;
-    max-width: 400px;
+    width: 100%;
+    max-width: 600px;
 }
 
 .menu-opcao {
     display: flex;
     flex-flow: column;
-    width: 100%;
     padding: 1em;
     background-color: bisque;
     border-radius: 16px;

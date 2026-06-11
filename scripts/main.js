@@ -1,3 +1,14 @@
+function animarIcone() {
+    setTimeout(function(){
+        const iconeLinhas = document.querySelectorAll('.icone-linha')
+        iconeLinhas.forEach(function(linha, i) {
+            setTimeout(function(){
+                linha.classList.add('icone-jogo-linhas-animacao')
+            }, 400 * i)
+        })
+    }, 500)
+}
+
 function verificador() {
     // Jogadores
     const j1 = document.querySelector('input#j1').value
