@@ -4,7 +4,7 @@ function animarIcone() {
         iconeLinhas.forEach(function(linha, i) {
             setTimeout(function(){
                 linha.classList.add('icone-jogo-linhas-animacao')
-            }, 400 * i)
+            }, 350 * i)
         })
     }, 500)
 }

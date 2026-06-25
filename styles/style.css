@@ -8,12 +8,21 @@
 }
 
 :root {
+    --cor-primaria: #c03b3b;
+    --cor-secundaria: #212020;
 
+    --fundo-pagina: #262626;
+    --fundo-blocos: #353535;
+
+    --texto-cor: #fff;
+    --texto-cor-alt: #000;
 }
 
 body {
     width: 100%;
     height: 100dvh;
+    background-color: var(--fundo-pagina);
+    color: var(--texto-cor);
     display: flex;
     justify-content: center;
 }
@@ -27,6 +36,8 @@ main {
     width: 100%;
     max-width: 600px;
 }
+
+/* Ícone */
 
 .icone-jogo {
     display: grid;
@@ -43,11 +54,10 @@ main {
 }
 
 .icone-linha {
-    background-color: black;
+    background-color: var(--fundo-blocos);
     border-radius: 8px;
     width: 0px;
     height: 15px;
-    transition: width 1s;
 }
 
 .icone-jogo-linhas:nth-child(2) {
@@ -56,7 +66,7 @@ main {
 
 .icone-jogo-linhas-animacao {
     width: 100%;
-    transition: width 1s;
+    transition: width .5s;
 }
 
 /* Menu */
@@ -73,22 +83,26 @@ main {
     display: flex;
     flex-flow: column;
     padding: 1em;
-    background-color: bisque;
+    background-color: var(--fundo-blocos);
+    color: var(--texto-cor);
     border-radius: 16px;
 }
 
 a.botao {
     text-decoration: none;
     text-align: center;
+    color: var(--texto-corc);
+    transition: background-color .2s;
 }
 
 button.botao {
     border: none;
     cursor: pointer;
+    transition: background-color .2s;
 }
 
 a.botao:hover, button.botao:hover {
-    background-color: rgb(223, 87, 87);
+    background-color: #5d5d5d;
 }
 
 .menu-opcao:nth-child(1) {
@@ -117,7 +131,32 @@ a.botao:hover, button.botao:hover {
 }
 
 .oculto {
-    display: none;
+    display: none !important;
+}
+
+/* Menu 2 jogadores */
+
+.opcoes-dois-jogadores {
+    display: flex;
+    flex-flow: column;
+    gap: .8em;
+}
+
+.menu-opcao-jogadores {
+    display: grid;
+    grid-template: auto auto / auto 1fr;
+    gap: .5em .3em;
+}
+
+.menu-opcao-jogadores label {
+    display: flex;
+    align-items: flex-end;
+}
+
+.menu-opcao-jogadores input {
+    padding: .3em;
+    border-radius: 10px;
+    border: none;
 }
 
 /* Menu - Melhor de */

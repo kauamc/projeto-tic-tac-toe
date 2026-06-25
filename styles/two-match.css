@@ -1,15 +1,29 @@
 main {
     padding: initial;
     gap: initial;
+    display: flex;
+    justify-content: center;
 }
 
 .partida-dados-jogadores {
     display: flex;
     flex-flow: column;
     width: 100%;
-    background-color: aquamarine;
+    background-color: var(--cor-primaria);
     padding: 1em;
     gap: 1em;
+    position: fixed;
+    z-index: 10;
+}
+
+.pdj-o {
+    top: 0;
+    left: 0;
+}
+
+.pdj-x {
+    bottom: 0;
+    left: 0;
 }
 
 .partida-dados-pts {
@@ -43,7 +57,7 @@ main {
 }
 
 .partida-area {
-    background-color: lightgrey;
+    background-color: grey;
     display: flex;
     justify-content: center;
     align-items: center;
