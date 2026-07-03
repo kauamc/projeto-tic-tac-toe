@@ -8,16 +8,21 @@
 </head>
 <body onload="animarIcone()">
     <main>
-        <section class="icone-jogo">
-            <div class="icone-jogo-linhas">
-                <div class="icone-linha"></div>
-                <div class="icone-linha"></div>
-            </div>
-            <div class="icone-jogo-linhas">
-                <div class="icone-linha"></div>
-                <div class="icone-linha"></div>
-            </div>
-        </section>
+        <sectioin class="logo">
+            <section class="icone-jogo">
+                <div class="icone-jogo-linhas">
+                    <div id="icone-linha-1" class="icone-linha"></div>
+                    <div id="icone-linha-2" class="icone-linha"></div>
+                </div>
+                <div class="icone-jogo-linhas">
+                    <div id="icone-linha-3" class="icone-linha"></div>
+                    <div id="icone-linha-4" class="icone-linha"></div>
+                </div>
+            </section>
+            <section class="titulo-jogo">
+                <h1>Tic Tac Toe Mania</h1>
+            </section>
+        </sectioin>
         <section class="menu">
             <button id="um-jogador" class="menu-opcao botao" onclick="selecaoModo(this.id)">1 Jogador</button>
             <button id="dois-jogadores" class="menu-opcao botao modo-selecionado" onclick="selecaoModo(this.id)">2 Jogadores</button>

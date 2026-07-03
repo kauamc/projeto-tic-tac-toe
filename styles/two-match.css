@@ -19,6 +19,7 @@ main {
 .pdj-o {
     top: 0;
     left: 0;
+    transform: rotate(180deg);
 }
 
 .pdj-x {
@@ -31,8 +32,15 @@ main {
     grid-template: auto / auto 1fr auto;
 }
 
+.partida-dados-pts-simbolo, .partida-dados-pts-pontuacao {
+    font-size: 2em;
+}
+
 .partida-dados-pts-jogador {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .partida-vez {
@@ -46,18 +54,19 @@ main {
 /* Partida */
 
 .partida {
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     margin: 0 auto;
     height: auto;
     aspect-ratio: 1/1;
     display: grid;
-    gap: 1em;
+    gap: .8em;
     grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    background-color: grey;
 }
 
 .partida-area {
-    background-color: grey;
+    background-color: var(--fundo-pagina);
     display: flex;
     justify-content: center;
     align-items: center;

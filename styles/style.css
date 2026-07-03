@@ -41,9 +41,10 @@ main {
 
 .icone-jogo {
     display: grid;
-    width: 350px;
-    height: 350px;
-    max-width: 400px;
+    width: 100%;
+
+    max-width: 300px;
+    aspect-ratio: 1/1;
 }
 
 .icone-jogo-linhas {
@@ -58,6 +59,22 @@ main {
     border-radius: 8px;
     width: 0px;
     height: 15px;
+}
+
+#icone-linha-1 {
+    background-color: #c03b3b;
+}
+
+#icone-linha-2 {
+    background-color: #932e2e;
+}
+
+#icone-linha-3 {
+    background-color: #c12323;
+}
+
+#icone-linha-4 {
+    background-color: #831414;
 }
 
 .icone-jogo-linhas:nth-child(2) {
