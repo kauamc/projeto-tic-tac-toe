@@ -25,6 +25,7 @@ body {
     color: var(--texto-cor);
     display: flex;
     justify-content: center;
+    
 }
 
 main {
