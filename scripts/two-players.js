@@ -6,23 +6,17 @@ for(let c = 1; c <= 9; c++) {
     document.getElementById(`a${c}`).innerHTML = partida[c-1]
 }
 
-const j1 = sessionStorage.getItem("jogador1")
-const j2 = sessionStorage.getItem("jogador2")
-const melhorDe = sessionStorage.getItem("melhorDe")
+let j1 = sessionStorage.getItem("jogador1")
+let j2 = sessionStorage.getItem("jogador2")
+if (j1 == "") { j1 = 'Jogador 1' }
+if (j2 == "") { j2 = 'Jogador 2' }
+
 if (j1) { document.getElementById('dados-j1-nome').innerHTML = j1 }
 if (j2) { document.getElementById('dados-j2-nome').innerHTML = j2 }
 
-// Partida
+const melhorDe = sessionStorage.getItem("melhorDe")
 
-/* 
-    1. Fazer jogada
-    2. Verificar se a jogada é válida
-    2.1. Se não, mostrar mensagem de erro
-    2.2. Se sim, seguir com próxima verificação
-    3. Verificar se há vencedor
-    3.1. Se sim, fim de jogo
-    3.2. Se não, passar vez
-*/
+// Partida
 
 let vez = 'j1'
 let dadosVezJ1 = document.getElementById('dados-j1-vez')
