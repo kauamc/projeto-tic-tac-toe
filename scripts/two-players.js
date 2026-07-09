@@ -95,7 +95,6 @@ function haVencedor() {
     // Em caso de velha
     } else if (qtdJogadas == 9) {
         alert('Deu velha!')
-        atualizarVez()
         novaRodada()
     }
 }
