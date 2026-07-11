@@ -73,3 +73,53 @@ main {
     font-size: 4em;
     cursor: pointer;
 }
+
+/* Modais */
+
+.fade {
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgba(23, 23, 23, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.modal {
+    width: 90%;
+    max-width: 400px;
+    min-height: 70px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--fundo-blocos);
+    padding: 1em;
+    border-radius: 16px;
+    z-index: 15;
+}
+
+.modal p {
+    font-size: 1.5em;
+    color: var(--texto-cor);
+}
+
+.modal button {
+    padding: .5em;
+    font-size: 1.2em;
+    border: 3px solid var(--cor-primaria);
+    border-radius: 16px;
+    background-color: transparent;
+    color: var(--cor-primaria);
+    cursor: pointer;
+    transition: opacity .3s ease;
+}
+
+.modal button:hover {
+    opacity: 0.8;
+}

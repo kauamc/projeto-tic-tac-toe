@@ -16,6 +16,8 @@ if (j2) { document.getElementById('dados-j2-nome').innerHTML = j2 }
 
 const melhorDe = sessionStorage.getItem("melhorDe")
 
+const modalVelha = document.querySelector('#empate-fade')
+
 // Partida
 
 let vez = 'j1'
@@ -94,9 +96,17 @@ function haVencedor() {
         }
     // Em caso de velha
     } else if (qtdJogadas == 9) {
-        alert('Deu velha!')
-        novaRodada()
+        abrirModalVelha()
     }
+}
+
+function abrirModalVelha() {
+    modalVelha.classList.remove('oculto')
+}
+
+function fecharModalVelha() {
+    modalVelha.classList.add('oculto')
+    novaRodada()
 }
 
 function atualizarVez() {
