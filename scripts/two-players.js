@@ -17,6 +17,7 @@ if (j2) { document.getElementById('dados-j2-nome').innerHTML = j2 }
 const melhorDe = sessionStorage.getItem("melhorDe")
 
 const modalVelha = document.querySelector('#empate-fade')
+const modalVitoria = document.querySelector('#vitoria-fade')
 
 // Partida
 
@@ -69,8 +70,7 @@ function haVencedor() {
         ptsJ1++
         dadosPtsJ1.innerHTML = ptsJ1
         if (ptsJ1 == melhorDe) {
-            alert(`${j1} venceu a melhor de ${melhorDe}`)
-            // Menu principal / jogar de novo
+            abrirModalVitoria(j1)
         } else {
             novaRodada()
         }
@@ -89,8 +89,7 @@ function haVencedor() {
         ptsJ2++
         dadosPtsJ2.innerHTML = ptsJ2
         if (ptsJ2 == melhorDe) {
-            alert(`${j2} venceu a melhor de ${melhorDe}`)
-            // Menu principal / jogar de novo
+            abrirModalVitoria(j2)
         } else {
             novaRodada()
         }
@@ -109,6 +108,16 @@ function fecharModalVelha() {
     novaRodada()
 }
 
+function abrirModalVitoria(jogador) {
+    let mensagem = document.querySelector('#vitoria-modal-p')
+    mensagem.innerHTML = `${jogador} venceu a melhor de ${melhorDe}`
+    modalVitoria.classList.remove('oculto')
+}
+
+function fecharModalVitoria() {
+    modalVitoria.classList.add('oculto')
+}
+
 function atualizarVez() {
     dadosVezJ1.classList.toggle('opacity-oculto')
     dadosVezJ2.classList.toggle('opacity-oculto')
@@ -125,4 +134,13 @@ function novaRodada() {
         document.getElementById(`a${c}`).innerHTML = partida[c-1]
     }
     qtdJogadas = 0
+}
+
+function novaPartida() {
+    ptsJ1 = 0
+    dadosPtsJ1.innerHTML = ptsJ1
+    ptsJ2 = 0
+    dadosPtsJ2.innerHTML = ptsJ2
+    novaRodada()
+    fecharModalVitoria()
 }
