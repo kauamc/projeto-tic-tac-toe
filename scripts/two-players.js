@@ -144,3 +144,10 @@ function novaPartida() {
     novaRodada()
     fecharModalVitoria()
 }
+
+function verPartida() {
+    let caixa = document.querySelector('#vitoria-modal')
+    let p = document.querySelector('#vitoria-modal-p')
+    caixa.classList.toggle('ver-partida')
+    p.classList.toggle('ver-partida-p')
+}
