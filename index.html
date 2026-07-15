@@ -64,10 +64,26 @@
                 </div>
                 <a href="./matches/two-players.html" id="botao-jogar" class="botao botao-jogar" onclick="verificador()">Jogar</a>
             </div>
-            <a class="menu-opcao botao" href="#">Como jogar</a>
-            <a class="menu-opcao botao" href="#">Sobre o projeto</a>
+            <button onclick="abrirFecharModal(0)" class="menu-opcao botao">Como jogar</button>
+            <button onclick="abrirFecharModal(1)" class="menu-opcao botao">Sobre o projeto</button>
         </section>
     </main>
+
+    <div class="fade oculto">
+        <div id="como-jogar" class="modal">
+            <h2>Como jogar?</h2>
+
+            <button onclick="abrirFecharModal(0)">Fechar</button>
+        </div>
+    </div>
+
+    <div class="fade oculto">
+        <div id="sobre" class="modal">
+            <h2>Sobre o projeto</h2>
+
+            <button onclick="abrirFecharModal(1)">Fechar</button>
+        </div>
+    </div>
 
     <script src="./scripts/main.js"></script>
 </body>

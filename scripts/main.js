@@ -46,3 +46,7 @@ function selecaoModo(id) {
         botaoJogar.classList.remove('oculto')
     }
 }
+
+function abrirFecharModal(modal) {
+    document.querySelectorAll('.fade')[modal].classList.toggle('oculto')
+}

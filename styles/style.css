@@ -189,3 +189,34 @@ a.botao:hover, button.botao:hover {
 .botao-jogar {
     padding: .5em;
 }
+
+/* Como jogar  e Sobre o projeto */
+
+.fade {
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgba(23, 23, 23, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.modal {
+    width: 90%;
+    max-width: 400px;
+    min-height: 70px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--fundo-blocos);
+    padding: 1em;
+    border-radius: 16px;
+    z-index: 15;
+    transition: background-color .3s ease, opacity .3s ease;
+}
