@@ -225,6 +225,10 @@ a.botao:hover, button.botao:hover {
     text-align: justify;
 }
 
+.modal img {
+    width: 100%;
+}
+
 .modal button {
     padding: .4em;
     font-size: 1.2em;
